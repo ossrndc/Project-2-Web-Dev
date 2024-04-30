@@ -1,6 +1,7 @@
 const copyButton = document.querySelector(".copy-button");
 const copyText = document.querySelector(".copy-text");
 const textarea = document.querySelector(".testTextArea");
+const voiceButton = document.querySelector(".voice-button")
 
 copyButton.addEventListener("click", () => {
     copyText.select();
@@ -14,3 +15,8 @@ copyButton.addEventListener("click", () => {
         copyButton.innerHTML = "Copy";
     }, 2000);
 });
+
+voiceButton.addEventListener("click",()=>{
+     const voice =  new SpeechSynthesisUtterance (textarea.value)
+     speechSynthesis.speak(voice);
+})
