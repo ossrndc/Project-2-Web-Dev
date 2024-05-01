@@ -3,9 +3,16 @@ const copyText = document.querySelector(".copy-text");
 const textarea = document.querySelector(".testTextArea");
 
 copyButton.addEventListener("click", () => {
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
+  
+    const inputValue = copyText.value;
+    
+    textarea.value = inputValue;
+    
+    
+    textarea.select();
     document.execCommand("copy");
+
+   
     copyButton.classList.toggle("success");
     copyButton.innerHTML = "Copied!";
 
